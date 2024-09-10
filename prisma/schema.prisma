@@ -35,10 +35,10 @@ model PoolUsers {
   user              Users @relation("Users", fields: [userId], references: [id], onDelete: Cascade)
   userId            String
 
-  connection        Pools @relation("Pools", fields: [connectionId], references: [id], onDelete: Cascade)
-  connectionId      String
+  pool              Pools @relation("Pools", fields: [poolId], references: [id], onDelete: Cascade)
+  poolId            String
 
-  rule              String
+  role              String
 
   createdAt         DateTime? @default(now())
   updatedAt         DateTime? @updatedAt
@@ -59,4 +59,14 @@ model Pools {
   updatedAt         DateTime? @updatedAt
 
   @@map("Pools")
+}
+
+model Settings {
+  id        Int  @id @default(autoincrement())
+
+  name      String //  maxInstallments
+  value     String? //  12x
+  jsonValue Json? //  { 'maxInstallments' : 12, 'minInstallments': 4}
+
+  @@map("settings")
 }
