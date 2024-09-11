@@ -1,0 +1,36 @@
+
+services:
+
+  # database service
+  db:
+    image: postgres
+    container_name: pulsar-postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pulsar
+    volumes:
+      - ./data:/data/postgres
+    ports:
+      - "5432:5432"
+      
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+  # application service
+  panel:
+    build: "./"
+    container_name: pulsar
+    restart: always
+    volumes:
+      - .:/src
+    ports:
+     - "3000:3000"
+    # comand: npm run start

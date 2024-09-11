@@ -58,7 +58,7 @@ model Pools {
   createdAt         DateTime? @default(now())
   updatedAt         DateTime? @updatedAt
 
-  @@map("Pools")
+  @@map("pools")
 }
 
 model Settings {
