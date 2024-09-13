@@ -1,44 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* light */
-  --primary: rgba(249, 115, 22, 1);
-  --primary-opacity: rgba(249, 115, 22, 0.1);
+/* @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
 
-  --background-1: rgba(248, 250, 252, 1);
-  --background-2: rgba(255, 255, 255, 1);
-
-  --color-1: rgba(51, 65, 85, 1);
-  --color-2: rgba(100, 116, 139, 1);
-  --color-3: rgba(203, 213, 225, 1);
-
-  --border: rgba(203, 213, 225, 1);
-
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* dark */
-    --primary: rgba(249, 115, 22, 1);
-    --primary-opacity: rgba(249, 115, 22, 0.1);
-  
-    --background-1: rgba(0, 0, 0, 1);
-    --background-2: rgba(9, 9, 9, 1);
-  
-    --color-1: rgba(203, 213, 225, 1);
-    --color-2: rgba(226, 232, 240, 1);
-    --color-3: rgba(148, 163, 184, 0.72);
-  
-    --border: rgba(241, 245, 249, 0.24);
-
-  }
-}
 
 @layer base {
 

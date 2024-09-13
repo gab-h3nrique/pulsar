@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+// import '@/global.css';
 import { NotificationProvider } from "@/contexts/NotificationContext";
 import { UserProvider } from "@/contexts/UserContext";
+import { useContext } from "react";
+import { ThemeContext, ThemeProvider } from "@/contexts/ThemeContext";
 
 
 export const metadata: Metadata = {
@@ -17,23 +20,28 @@ interface Props {
 export default function RootLayout({ children }: Props) {
 
   
+
   return (
 
-    <html lang="en">
-      <body className={`flex flex-col w-dvw h-dvh bg-background-1 relative selection:text-primary selection:bg-primary-opacity`}>
+    <ThemeProvider>
 
-        <NotificationProvider>
-          <UserProvider>
+      <html lang="en">
+        <body className={`flex flex-col w-dvw h-dvh bg-background-1 dark:bg-background-1-dark relative selection:text-primary selection:bg-primary-opacity`}>
 
-              {children}
+          <NotificationProvider>
+            <UserProvider>
 
-          </UserProvider>
-        </NotificationProvider>
+                {children}
 
-        <div id="portal"></div>
-        
-      </body>
-    </html>
+            </UserProvider>
+          </NotificationProvider>
+
+          <div id="portal"></div>
+          
+        </body>
+      </html>
+
+    </ThemeProvider>
     
   );
 
