@@ -25,7 +25,7 @@ function Dialog(props: Props) {
       
       <section onClick={(e)=> { e.stopPropagation(); onClose && onClose() }} className={`dialog absolute top-0 left-0 m-auto w-fit h-fit z-[31] ${ isOpen ? 'flex' : 'hidden' }`}>
 
-        <div className={`flex w-fit h-fit bg-background-2 ${className}`} {...rest}>
+        <div className={`flex w-fit h-fit bg-background-2 dark:bg-background-2-dark ${className}`} {...rest}>
           {children}
         </div>
 

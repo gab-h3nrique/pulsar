@@ -16,8 +16,8 @@ function MenuHeader(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
 
         <section onClick={() => change('dark')} className={`ml-6 gap-5 cursor-pointer flex justify-center items-center ${className}`} {...rest}>
 
-            <Svg.Bars className='button h-5 w-5 fill-color-1'/>
-            <Svg.Logo className='h-10 w-12 scale-[1.2] fill-color-1'/>
+            <Svg.Bars className='button h-5 w-5 fill-color-1 dark:fill-color-1-dark'/>
+            <Svg.Nodes className='h-9 w-12 scale-[1.2] fill-color-1 dark:fill-color-1-dark'/>
 
         </section>
 

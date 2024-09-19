@@ -10,7 +10,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: pulsar
+      POSTGRES_DB: postgres
     volumes:
       - ./data:/data/postgres
     ports:
@@ -33,4 +33,8 @@ services:
       - .:/src
     ports:
      - "3000:3000"
-    # comand: npm run start
+    environment:
+      ACCESS_TOKEN: g4rren-dansukdfrang
+      POOL_TOKEN: g4rren-sdffg
+      DATABASE_URL: postgresql://postgres:password@192.168.100.46:5432/postgres?schema=postgres
+      SOCKET_URL: http://192.168.100.45:3001

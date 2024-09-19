@@ -20,6 +20,10 @@
     @apply border-[1px] border-border;
   }
 
+  .border-dark {
+    @apply border-[1px] border-border-dark;
+  }
+
   .button {
     @apply hover:scale-[1.01] duration-150 cursor-pointer
   }

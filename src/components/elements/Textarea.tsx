@@ -22,8 +22,8 @@ function Textarea(props: Props) {
     //   {children}
     // </button>
 
-    <label className={`flex gap-2 description border bg-background-2 text-color-1 font-semibold py-[.438rem] px-4 rounded-lg hover:scale-[1.01] duration-150 ${className}`} {...rest}>
-      <textarea onChange={onChange} value={value as any  || ''} className='description text-color-1 bg-transparent outline-0 w-full h-full' {...rest}/>
+    <label className={`flex gap-2 description border bg-background-2 text-color-1 dark:bg-background-2-dark dark:text-color-1-dark font-semibold py-[.438rem] px-4 rounded-lg hover:scale-[1.01] duration-150 ${className}`} {...rest}>
+      <textarea onChange={onChange} value={value as any  || ''} className='description text-color-1 dark:text-color-1-dark bg-transparent outline-0 w-full h-full' {...rest}/>
     </label>
 
   )

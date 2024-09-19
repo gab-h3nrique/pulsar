@@ -4,10 +4,15 @@ import { UserProvider } from '@/contexts/UserContext'
 import React, { memo, useState } from 'react'
 import Button from '@/components/elements/Button'
 import { Subtitle, Title } from '@/components/texts/Texts'
+import { useRouter } from 'next/navigation'
 
 const Page = () => {
 
+    console.log('ehehehe')
 
+    const router = useRouter()
+  
+    router.push('/auth/pools')
 
     return (
 

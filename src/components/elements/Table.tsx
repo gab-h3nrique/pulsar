@@ -7,7 +7,7 @@ export const Table = (props: React.TableHTMLAttributes<HTMLTableElement>) => {
 
   return (
 
-    <table className={`gap-[1px] w-fit h-fit flex flex-col border bg-border rounded-xl overflow-hidden ${className}`} {...rest}>
+    <table className={`gap-[1px] w-fit h-fit flex flex-col border bg-border dark:border-dark dark:bg-border-dark rounded-xl overflow-hidden ${className}`} {...rest}>
       {children}
     </table>
 
@@ -43,7 +43,7 @@ export const Td = (props: React.TdHTMLAttributes<HTMLTableDataCellElement>) => {
 
   return (
 
-    <td className={`p-2 w-full bg-background-2 text-color-2 truncate ${className}`} {...rest}>
+    <td className={`p-2 w-full bg-background-2 text-color-2 dark:bg-background-2-dark dark:text-color-2-dark truncate ${className}`} {...rest}>
       {children}
     </td>
 
@@ -56,7 +56,7 @@ export const Th = (props: React.TdHTMLAttributes<HTMLTableDataCellElement>) => {
 
   return (
 
-    <th className={`p-2 w-full bg-background-2 text-color-2 truncate ${className}`} {...rest}>
+    <th className={`p-2 w-full bg-background-2 text-color-2 dark:bg-background-2-dark dark:text-color-2-dark truncate ${className}`} {...rest}>
       {children}
     </th>
 

@@ -49,7 +49,7 @@ model PoolUsers {
 model Pools {
   id                String @id @default(cuid())
 
-  name              String @unique
+  name              String
 
   token             String
 
