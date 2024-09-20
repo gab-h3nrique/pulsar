@@ -30,7 +30,7 @@ RUN adduser --system --uid 1001 nextjs
 
 COPY --from=deps /app/tailwind.config.ts /app/postcss.config.mjs ./
 
-COPY --from=builder /app/public ./public
+# COPY --from=builder /app/public ./public
 COPY --from=builder /app/prisma ./prisma
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
