@@ -34,9 +34,11 @@ services:
     volumes:
       - .:/src
     ports:
-     - "3000:3000"
+      - "3000:3000"
+    links:
+      - pulsar-postgres
     environment:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
-      DATABASE_URL: postgresql://postgres:pulsar-db-ps@localhost:5432/postgres?schema=postgres
+      DATABASE_URL: postgresql://postgres:pulsar-db-ps@pulsar-postgres:5432/postgres?schema=postgres
       SOCKET_URL: http://138.0.172.170:3001
