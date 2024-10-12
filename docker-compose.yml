@@ -9,7 +9,7 @@ services:
     shm_size: 128mb
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: pulsar-db-ps
       POSTGRES_DB: postgres
     volumes:
       - ./data:/data/postgres
@@ -38,5 +38,5 @@ services:
     environment:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
-      DATABASE_URL: postgresql://postgres:password@localhost:5432/postgres?schema=postgres
+      DATABASE_URL: postgresql://postgres:pulsar-db-ps@localhost:5432/postgres?schema=postgres
       SOCKET_URL: http://138.0.172.170:3001
