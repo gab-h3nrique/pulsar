@@ -16,7 +16,6 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/tailwind.config.ts /app/postcss.config.mjs ./
 COPY . .
 RUN npx prisma generate
-RUN npx prisma db push
 RUN npm run build
 
 
