@@ -37,6 +37,8 @@ services:
       - "3000:3000"
     links:
       - pulsar-postgres
+    depends_on:
+      - pulsar-postgres
     environment:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
