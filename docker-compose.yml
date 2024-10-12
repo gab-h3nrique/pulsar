@@ -16,8 +16,11 @@ services:
     ports:
       - "5432:5432"
     extra_hosts:
-      - "host.docker.internal:127.0.0.1"
       - "host.docker.internal:host-gateway"
+      # - "host.docker.internal:127.0.0.1"
+    networks:
+      - my-network
+
 
   adminer:
     image: adminer
@@ -35,12 +38,43 @@ services:
       - .:/src
     ports:
       - "3000:3000"
+    networks:
+      - my-network
     links:
       - db
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
       DATABASE_URL: postgresql://postgres:pulsar-db-ps@db:5432/postgres?schema=postgres
       SOCKET_URL: http://138.0.172.170:3001
+
+
+networks:
+  my-network:
+    external: true
+
+
+
+
+  # # socket service
+  # socket:
+  #   build: "../pulsar-socket"
+  #   container_name: pulsar-socket
+  #   restart: always
+  #   volumes:
+  #     - .:/src
+  #   ports:
+  #    - "3001:3001"
+  #   links:
+  #     - db
+  #   depends_on:
+  #     - db
+  #   # comand: npm run start
+  #   environment:
+  #     PORT: 3001
+  #     ACCESS_TOKEN: g4rren-dansukdfrang
+  #     POOL_TOKEN: g4rren-sdffg
+  #     DATABASE_URL: postgresql://postgres:pulsar-db-ps@db:5432/postgres?schema=postgres
