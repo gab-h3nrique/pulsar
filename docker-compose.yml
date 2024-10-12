@@ -42,9 +42,6 @@ services:
       - my-network
     links:
       - db
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
