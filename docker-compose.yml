@@ -42,6 +42,8 @@ services:
       - my-network
     links:
       - db
+    db:
+      condition: service_started
     environment:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
