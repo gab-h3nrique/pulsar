@@ -158,7 +158,7 @@ function Page() {
             <Tr>
               <Th className='text-start font-semibold max-w-40'>Name</Th>
               <Th className='text-start font-semibold'>Link</Th>
-              <Th className='text-start font-semibold max-w-64 hidden md:flex'>Token</Th>
+              <Th className='text-start font-semibold max-w-[30rem] hidden md:flex'>Token</Th>
             </Tr>
 
             { array.map((item, i)=> (
@@ -169,7 +169,7 @@ function Page() {
                   <span className="truncate">{ `${socketUrl}/pool/${item.name}-${item.id}` }</span>
                   <Svg.Copy onClick={(e) => { e.stopPropagation(); copyContent(`${socketUrl}/pool/${item.name}-${item.id}`) }} className='w-4 h-4 min-w-4 mih-h-4 fill-color-2 dark:fill-color-2-dark'/>
                 </Td>
-                <Td className='text-start font-semibold max-w-64 hidden md:flex'>
+                <Td className='text-start font-semibold max-w-[30rem] hidden md:flex'>
                   <span className="truncate">{ item.token }</span>
                   <Svg.Copy onClick={(e) => { e.stopPropagation(); copyContent(item.token) }} className='w-4 h-4 min-w-4 mih-h-4 fill-color-2 dark:fill-color-2-dark'/>
                 </Td>
@@ -181,7 +181,7 @@ function Page() {
               <Tr className='list'>
                 <Td className='text-start font-semibold max-w-40'><Svg.Spinner className='w-5 h-5 fill-background-2 dark:fill-background-2-dark opacity-[.4]'/></Td>
                 <Td className='text-start font-semibold'><Svg.Spinner className='w-5 h-5 fill-background-2 dark:fill-background-2-dark opacity-[.4]'/></Td>
-                <Td className='text-start font-semibold max-w-64 hidden md:flex'><Svg.Spinner className='w-5 h-5 fill-background-2 dark:fill-background-2-dark opacity-[.4]'/></Td>
+                <Td className='text-start font-semibold max-w-[30rem] hidden md:flex'><Svg.Spinner className='w-5 h-5 fill-background-2 dark:fill-background-2-dark opacity-[.4]'/></Td>
               </Tr>
             }
 
