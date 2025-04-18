@@ -62,7 +62,7 @@ function Page() {
       
       setLoading(true)
 
-      const { data, total, success, message, ...rest } = await Api.get('/api/auth/pool', { page: pageParam, limit: limit, ...filter })
+      const { data, total, success, message, ...rest } = await Api.get('/auth/pool', { page: pageParam, limit: limit, ...filter })
 
       if(!success) return notification({ type: 'error', title: 'Attention', description: 'Any data was found.' })
 

@@ -38,7 +38,7 @@ function Page() {
 
       setLoading(true)
 
-      const { user, token, message } = await Api.post('/api/login', { email: userLogin.email, password: userLogin.password })
+      const { user, token, message } = await Api.post('/login', { email: userLogin.email, password: userLogin.password })
 
       if(!token || !user) return setMessage('Usuário ou senha inválidas.')
   

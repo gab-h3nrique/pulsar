@@ -44,7 +44,8 @@ services:
       ACCESS_TOKEN: g4rren-dansukdfrang
       POOL_TOKEN: g4rren-sdffg
       DATABASE_URL: postgresql://postgres:pulsar-db-ps@db:5432/postgres?schema=postgres
-      SOCKET_URL: http://138.0.172.170:3001
+      SOCKET_URL: wss://138.0.172.170/socket
+      BASE_API_URL: https://138.0.172.170/pulsar/api
 
 
 networks:

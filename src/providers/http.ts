@@ -11,17 +11,23 @@ type Options = {
 
 function fetchApi() {
 
+    const BASE_URL = new URL(process.env.BASE_API_URL as string || 'http://localhost:3000/pulsar/api')
+
     return {
 
         get: async (url: string ,object: any = null, init?: RequestInit | undefined): Promise<JSON | any> => {
 
-            const response = await fetch(url + `${ object ? `?${new URLSearchParams(object)}` : ''}`, {
+            const response = await fetch(`${BASE_URL}/${url}` + `${ object ? `?${new URLSearchParams(object)}` : ''}`, {
 
                 method: 'GET',
+                // mode: 'no-cors',
                 cache: init?.cache || 'no-store',
                 // next: { revalidate: init?.next?.revalidate } || undefined,
                 headers: init?.headers || {
-                    'Allow-Access-Control-Origin': `*`,
+                    'Access-Control-Allow-Origin': `*`,
+                    'Access-Control-Allow-Credentials': `true`,
+                    'Access-Control-Allow-Headers': `Content-Type, Authorization`,
+                    'Access-Control-Allow-Methods': `GET,DELETE,PATCH,POST,PUT,OPTIONS'`,
                     'Content-Type': 'application/json;charset=utf-8',
                     'Authorization': `Bearer ${await Cookie.get('auth')}`,
                 },
@@ -34,7 +40,7 @@ function fetchApi() {
 
         post: async (url: string, object: any = null, init?: RequestInit | undefined): Promise<JSON | any> => {
 
-            const response = await fetch(url, {
+            const response = await fetch(`${BASE_URL}/${url}`, {
                 method: 'POST',
                 cache: init?.cache || 'no-store',
                 // next: { revalidate: init?.next?.revalidate } || undefined,
@@ -52,7 +58,7 @@ function fetchApi() {
 
         delete: async (url: string, object?: any): Promise<JSON | any> => {
 
-            const response = await fetch(url + `${ object ? `?${new URLSearchParams(object)}` : ''}`, {
+            const response = await fetch(`${BASE_URL}/${url}` + `${ object ? `?${new URLSearchParams(object)}` : ''}`, {
                 method: 'DELETE',
                 // mode: 'cors',
                 headers: {
