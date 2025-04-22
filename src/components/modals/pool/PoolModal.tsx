@@ -55,7 +55,7 @@ function OrderModal({ isOpen, item, onClose }: Props) {
 
             setRemoveLoading(true)
 
-            const { data, total, success, message, ...rest } = await Api.delete('/auth/pool', { id: edited.id })
+            const { data, total, success, message, ...rest } = await Api.delete('auth/pool', { id: edited.id })
         
             if(!success) return notification({ type: 'warning', title: 'Atenção', description: 'Nenhum dado foi excluido.' })
 
@@ -91,7 +91,7 @@ function OrderModal({ isOpen, item, onClose }: Props) {
 
             }
 
-            const { data, total, success, message, ...rest } = await Api.post('/auth/pool', formated)
+            const { data, total, success, message, ...rest } = await Api.post('auth/pool', formated)
         
             if(!success) return notification({ type: 'warning', title: 'Attention', description: 'Any data was found.' })
 
